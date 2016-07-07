@@ -59,7 +59,7 @@ Access Node-Red Dash board UI
 
 You must test that the johnney five node on the flow must connected to your arduino. And show in the debug tab of your node-red instance is writing the measured from your accelerometer sensor.
 
-2) Using a scketch deployed on your arduino device:
+2) Using a sketch deployed on your arduino device:
 
 In that case you simple deploy the sketch on your arduino and degub the results on your serial tab from your Arduino IDE. In that case the measures are not capture from the server.
 
