@@ -5,7 +5,7 @@ A proof of concept to demostrate any measure captured from a accelerometer attac
   1) a arduino sketc
   2) arduino firmata protocol and a node-red flow to extract.
 
-The Node-RED flow Designer in server side:
+![picapp - apple imac_1](https://cloud.githubusercontent.com/assets/1216181/16663437/63d219a8-447c-11e6-98f6-aa01d269c909.png)
 
 The Dashboard UI
 
@@ -13,6 +13,10 @@ The Dashboard UI
 
 - [Arduino Mega 2560](https://www.arduino.cc/en/Main/ArduinoBoardMega2560): The MEGA 2560 is designed for more complex projects. With 54 digital I/O pins, 16 analog inputs and a larger space for your sketch.
 - [Meas 4610-002-060](http://meas-spec.com/product/tm_product.aspx?id=9902): The Model 4610A is an ultra low-noise accelerometer designed for both static and dynamic measurements. The accelerometer offers integral temperature compensation with dynamic range from ±2 to ±500g. The model 4610A incorporates a gas damped MEMS element with mechanical overload stops for high-g shock protection. 
+
+1) Using Node-Red
+
+The Node-RED flow Designer in server side:
 
 # Infraestructure Techonologies on device
 
@@ -24,7 +28,9 @@ The Dashboard UI
 
 # Installation:
 
-Install Node-Red and Node-Red packages to connect to the arduino device and make a graph
+Install Arduino firmata on the arduino. Connect the arduino to the PC using USB start Arduino IDE. Configure your Arduino conection to deploy any scketch on your arduino and deploy the StanadardFirmata scketch on your arduino to install the firmata protocol before connect to node-red. Close the Arduino IDE. 
+
+Install Node-Red and Node-Red packages on the server to connect to the arduino device and make a graph
 ```
 npm install
 ```
@@ -32,11 +38,6 @@ npm install
 - Copy and import this flow from node-red import clipboard to crete the server flow
 ```
 [{"id":"ad18b617.54f588","type":"gpio in","z":"658e1b2a.8c02f4","name":"Accelerometer Monoaxial","state":"ANALOG","samplingInterval":"0.01","pin":"0","board":"e44f4b3e.dd1b28","x":207,"y":153,"wires":[["3da05c7c.03b8a4"]]},{"id":"2117035e.d95b6c","type":"iot-datasource","z":"658e1b2a.8c02f4","name":"Axis Z","tstampField":"","dataField":"","disableDiscover":false,"x":569,"y":98,"wires":[[]]},{"id":"45b36907.77d168","type":"debug","z":"658e1b2a.8c02f4","name":"","active":true,"console":"false","complete":"payload","x":577,"y":184,"wires":[]},{"id":"3da05c7c.03b8a4","type":"function","z":"658e1b2a.8c02f4","name":"Parse","func":"V = (5*msg.payload)/1024;\nG = V/3.5;\nA = G - 1;\n\nmsg.payload = {\n  tstamp: new Date().getTime(),\n  data: {\n    z: A\n  }\n}\n\nreturn msg;","outputs":1,"noerr":0,"x":407,"y":153,"wires":[["2117035e.d95b6c","45b36907.77d168"]]},{"id":"e44f4b3e.dd1b28","type":"nodebot","z":"658e1b2a.8c02f4","name":"Arduino Mega","username":"","password":"","boardType":"firmata","serialportName":"/dev/cu.usbmodem641","connectionType":"local","mqttServer":"","socketServer":"","pubTopic":"","subTopic":"","tcpHost":"","tcpPort":"","sparkId":"","sparkToken":"","beanId":"","impId":"","meshbluServer":"https://meshblu.octoblu.com","uuid":"","token":"","sendUuid":""}]
-```
-
-Execute npm to install node-red message router and the UI modules on the server, the package.json has all dependencies:
-```
-  npm install
 ```
 
 Start node-red
@@ -53,6 +54,12 @@ Access Node-Red Dash board UI
 ```
   http://localhost:1880/dash
 ```
+
+You must test that the johnney five node on the flow must connected to your arduino. And show in the debug tab of your node-red instance is writing the measured from your accelerometer sensor.
+
+2) Using a scketch deployed on your arduino device:
+
+In that case you simple deploy the sketch on your arduino and degub the results on your serial tab from your Arduino IDE. In that case the measures are not capture from the server.
 
 # Licenses
 The source code is released under Apache 2.0.
