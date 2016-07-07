@@ -2,7 +2,7 @@
 
 A proof of concept to demostrate any measure captured from a accelerometer attached to a arduino mega using:
 
-- The protocol arduino firmataand a node-red flow on a server to graph it.
+- The protocol arduino firmata and a node-red flow on a server to graph it.
 - An arduino sketch deployes on your device directly.
 
 ![picapp - apple imac_1](https://cloud.githubusercontent.com/assets/1216181/16663437/63d219a8-447c-11e6-98f6-aa01d269c909.png)
