@@ -15,6 +15,8 @@ The system
 
 ![img_3178](https://cloud.githubusercontent.com/assets/1216181/17766692/abfa1e58-652c-11e6-8082-934d57c44bd0.JPG)
 
+![img_3176](https://cloud.githubusercontent.com/assets/1216181/17766757/f8554bba-652c-11e6-93ea-89fdee5e2c44.JPG)
+
 # Hardware:
 
 - [Arduino Mega 2560](https://www.arduino.cc/en/Main/ArduinoBoardMega2560): The MEGA 2560 is designed for more complex projects. With 54 digital I/O pins, 16 analog inputs and a larger space for your sketch.
