@@ -13,7 +13,7 @@ The Dashboard UI
 
 The system
 
-![picapp - apple imac_2](https://cloud.githubusercontent.com/assets/1216181/16663470/755fb07c-447c-11e6-8fdf-4b0fa4d0bd41.png)
+![img_3178](https://cloud.githubusercontent.com/assets/1216181/17766692/abfa1e58-652c-11e6-8082-934d57c44bd0.JPG)
 
 # Hardware:
 
