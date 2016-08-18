@@ -11,6 +11,10 @@ The Dashboard UI
 
 ![picapp - apple imac_2](https://cloud.githubusercontent.com/assets/1216181/16663470/755fb07c-447c-11e6-8fdf-4b0fa4d0bd41.png)
 
+The system
+
+![picapp - apple imac_2](https://cloud.githubusercontent.com/assets/1216181/16663470/755fb07c-447c-11e6-8fdf-4b0fa4d0bd41.png)
+
 # Hardware:
 
 - [Arduino Mega 2560](https://www.arduino.cc/en/Main/ArduinoBoardMega2560): The MEGA 2560 is designed for more complex projects. With 54 digital I/O pins, 16 analog inputs and a larger space for your sketch.
